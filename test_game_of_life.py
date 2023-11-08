@@ -26,3 +26,13 @@ def test_count_neighbours():
     x, y = 1, 1
     count = game_of_life.count_neighbours(grid, x, y)
     assert count == 5
+
+def test_next_generation():
+    current_grid = [[1, 0, 1],
+                    [0, 1, 0],
+                    [1, 1, 1]]
+    expected_grid = [[0, 1, 0],
+                     [0, 0, 0],
+                     [1, 1, 1]]
+    new_grid = game_of_life.next_generation(current_grid)
+    assert new_grid == expected_grid
