@@ -42,3 +42,19 @@ def next_generation(current_grid):
                     new_grid[x][y] = 1
 
     return new_grid
+
+def main(rows, cols, generations):
+    grid = create_grid(rows, cols)
+    print_grid(grid)
+
+    for generation in range(generations):
+        time.sleep(0.2)
+        grid = next_generation(grid)
+        print("\033c")
+        print_grid(grid)
+
+if __name__ == "__main__":
+    rows = 20 
+    cols = 20  
+    generations = 10  
+    main(rows, cols, generations)
