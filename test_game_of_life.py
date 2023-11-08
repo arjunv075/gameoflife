@@ -7,3 +7,14 @@ def test_create_grid():
     assert len(grid) == rows
     for row in grid:
         assert len(row) == cols
+
+def test_print_grid(capsys):
+    grid = [
+        [True, False, True],
+        [False, True, False],
+        [True, True, True]
+    ]
+    expected_output = ".   .\n  .  \n. . .\n"
+    game_of_life.print_grid(grid)
+    captured = capsys.readouterr()
+    assert captured.out == expected_output
