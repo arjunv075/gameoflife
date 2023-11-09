@@ -44,7 +44,7 @@ def next_generation(current_grid):
     return new_grid
 
 def main(rows, cols, generations):
-    grid = create_grid(rows, cols)
+    grid = create_random_grid(rows, cols)
     print_grid(grid)
 
     for generation in range(generations):
